@@ -40,7 +40,7 @@ class Mahasiswa_model extends CI_model
 			"jurusan" => $this->input->post('jurusan', true)
 		];
 
-		$this->db->where('id', $this->input->post('id'));
+		$this->db->where('id', $id);
 		$this->db->update('mahasiswa', $data);
 	}
 

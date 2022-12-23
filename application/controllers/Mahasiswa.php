@@ -80,16 +80,7 @@
 				$this->load->view('mahasiswa/ubah', $data);
 				$this->load->view('templates/footer');
 			} else {
-				$data = [
-		            "nama_event" => $this->input->post('nama_event', true),
-		            "keterangan" => $this->input->post('keterangan', true),
-		            "lokasi" => $this->input->post('lokasi', true),
-		            "event_address" => $this->input->post('event_address', true),
-		            "event_date" => $this->input->post('event_date', true)
-		        ];
-
-		        $$this->db->where('id', $this->input->post('id'));
-		        $this->db->update('mahasiswa', $data);
+				$this->Mahasiswa_model->ubahDataMahasiswa($id);
 		        $this->session->set_flashdata('message', '<div class="
 		            alert alert-success
 		        ">Edit data sukses</div>');
